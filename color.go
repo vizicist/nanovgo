@@ -36,7 +36,7 @@ func (c Color) List() []float32 {
 	return []float32{c.R, c.G, c.B, c.A}
 }
 
-// Convert To HSLA
+// HSLA converter
 func (c Color) HSLA() (h, s, l, a float32) {
 	max := maxFs(c.R, c.G, c.B)
 	min := minFs(c.R, c.G, c.B)
@@ -65,12 +65,12 @@ func (c Color) HSLA() (h, s, l, a float32) {
 	return
 }
 
-// Calc luminance value
+// Luminance value calculation
 func (c Color) Luminance() float32 {
 	return c.R*0.299 + c.G*0.587 + c.B*0.144
 }
 
-// Calc constraint color
+// ContrastingColor color
 func (c Color) ContrastingColor() Color {
 	if c.Luminance() < 0.5 {
 		return MONO(255, 255)

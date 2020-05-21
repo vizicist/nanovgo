@@ -4,12 +4,13 @@
 package nanovgo
 
 import (
-	"log"
-	"unsafe"
 	"encoding/binary"
+	"log"
 	"math"
+	"unsafe"
 )
 
+// Float is
 type Float float32
 
 var shaderHeader = `

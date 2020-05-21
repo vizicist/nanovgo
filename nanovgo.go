@@ -2,12 +2,13 @@ package nanovgo
 
 import (
 	"bytes"
-	"github.com/vizicist/nanovgo/fontstashmini"
 	"image"
 	_ "image/jpeg" // to read jpeg
 	_ "image/png"  // to read png
 	"log"
 	"os"
+
+	"github.com/vizicist/nanovgo/fontstashmini"
 )
 
 // Context is an entry point object to use NanoVGo API and created by NewContext() function.
@@ -292,9 +293,9 @@ func (c *Context) SetTransform(t TransformMatrix) {
 //   [a c e]
 //   [b d f]
 //   [0 0 1]
-func (cx *Context) SetTransformByValue(a, b, c, d, e, f float32) {
-	t := TransformMatrix{a, b, c, d, e, f}
-	state := cx.getState()
+func (c *Context) SetTransformByValue(a, b, cc, d, e, f float32) {
+	t := TransformMatrix{a, b, cc, d, e, f}
+	state := c.getState()
 	state.xform = state.xform.PreMultiply(t)
 }
 
