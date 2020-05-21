@@ -2,4 +2,5 @@
 *.iml
 *.swp
 doc/_build
+*~
 
